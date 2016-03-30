@@ -80,7 +80,6 @@ var Engine = (function(global) {
      */
     function update(dt) {
         updateEntities(dt);
-        // checkCollisions();
     }
 
     /* This is called by the update function and loops through all of the
@@ -91,6 +90,7 @@ var Engine = (function(global) {
      * render methods.
      */
     function updateEntities(dt) {
+        gem.update();
         allEnemies.forEach(function(enemy) {
             enemy.update(dt);
         });
@@ -145,21 +145,23 @@ var Engine = (function(global) {
      */
     function renderEntities() {
         /* Loop through all of the objects within the allEnemies array and call
-         * the render function you have defined.
+         * the render function defined.
          */
+        gem.render();
+
         allEnemies.forEach(function(enemy) {
             enemy.render();
         });
 
         player.render();
-    }
 
-    /* This function does nothing but it could have been a good place to
-     * handle game reset states - maybe a new game menu or a game over screen
-     * those sorts of things. It's only called once by the init() method.
-     */
-    function reset() {
-        // noop
+        welcomeMsg();
+
+        gameOverMsg(lastScore);
+
+        showScore(player.score);
+
+        renderHighScore();
     }
 
     /* Go ahead and load all of the images we know we're going to need to
@@ -171,7 +173,11 @@ var Engine = (function(global) {
         'images/water-block.png',
         'images/grass-block.png',
         'images/enemy-bug.png',
-        'images/char-boy.png'
+        'images/char-boy.png',
+        'images/gem-blue.png',
+        'images/gem-green.png',
+        'images/gem-orange.png',
+        'images/keys.png'
     ]);
     Resources.onReady(init);
 

@@ -1,6 +1,11 @@
-frontend-nanodegree-arcade-game
-===============================
+Frogger Game
+————————————
 
-Students should use this [rubric](https://www.udacity.com/course/viewer/#!/c-nd001/l-2696458597/m-2687128535) for self-checking their submission.
+To start the game open index.html in your favourite browser.
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+The game will start when moving the player with the arrow keys.
+
+The goal of the game is to collect as many gems as possible, be aware of the dangerous bugs and don’t jump into the water.
+
+Possible future features:
+- Local two-player in a larger level.
